@@ -1,0 +1,63 @@
+@use "../base/index" as *;
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding-bottom: 10px;
+    gap: $mobile-images-gap;
+
+    &-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: $mobile-images-gap;
+
+        .image {
+            width: 100%;
+            display: block;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+.focused-image {
+    visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(30, 30, 30, 0.80);
+    
+    > img {
+        position:fixed;
+        z-index:2000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@include desktop {
+    .images {
+        gap: $desktop-images-gap;
+
+        &-column {
+            gap: $desktop-images-gap;
+        }
+
+        .image {
+            cursor: pointer;
+        }
+    }
+
+    .focused-image {
+        visibility: visible;
+    }
+}

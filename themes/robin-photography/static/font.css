@@ -1,0 +1,5 @@
+.arrow {
+  background: url("arrow.svg") no-repeat top left;
+  background-size: contain;
+  cursor: pointer;
+}

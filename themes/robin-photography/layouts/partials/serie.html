@@ -1,0 +1,10 @@
+{{.Title}}
+
+{{ $images := .Resources.ByType "image"  }}
+    {{ range $images }}
+    <div class="image">
+        {{ with .Fit "1920x720 webp q70" }}
+            <img src="{{ .RelPermalink }}" class="focus-on-click">
+        {{ end }}
+    </div>
+{{ end }}

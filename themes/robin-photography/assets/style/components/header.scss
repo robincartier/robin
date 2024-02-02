@@ -1,0 +1,53 @@
+@use "../base/index" as *;
+
+
+.header {
+    display: flex;
+    align-items: start;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: row;
+
+    .title {
+        margin: 5px auto;
+
+        h1, h2 {
+            margin: auto;
+        }
+    }
+
+    .logo > img {
+        height: auto;
+        width: 14vw
+    }
+}
+
+/* --- mobile style --- */
+@include mobile {
+    .header {
+        
+        padding: $mobile-padding;
+    }
+
+}
+/* --- end mobile style --- */
+
+
+/* --- desktop style --- */
+@include desktop {
+
+    .header {
+        flex-direction: column;
+
+        height: 100%;
+        width: $desktop-header-width;
+        padding: $desktop-padding;
+
+        border-right: 2px solid $border-color;
+
+        .logo > img {
+            height: 100px;
+            width: auto;
+        }
+    }
+}

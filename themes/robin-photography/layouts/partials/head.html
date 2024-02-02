@@ -1,0 +1,10 @@
+<head>
+    <title>{{ .Site.Params.title }}</title>
+    <meta charset="UTF-8">
+    {{ $opts := dict "transpiler" "dartsass" }}
+    {{ $style := resources.Get "style/index.scss" | toCSS $opts | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $.Page.Site.BaseURL }}font.css">
+    {{ $script := resources.Get "js/index.js" | js.Build }}
+    <script src="{{ $script.Permalink }}" async></script>
+</head>

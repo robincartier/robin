@@ -1,0 +1,13 @@
+
+<div class="header">
+    {{ with .Site.GetPage "header" }}
+        {{ with (.Resources.GetMatch "logo") }}
+            <a class="logo" href="{{ $.Site.BaseURL }}">
+                <img src="{{ .RelPermalink }}">
+            </a>
+        {{ end }}
+        <div class="title">
+            {{ .Content }} 
+        </div>
+    {{ end }}
+</div>

@@ -1,0 +1,8 @@
+{{ $image := .Resources.GetMatch "main" }}
+<div class = "category">
+  <a href="{{ .RelPermalink }}">
+    <img src="{{ $image.RelPermalink }}">
+  </a>
+  <br>
+  <a href="{{ .RelPermalink }}">▸ {{ .Title }}</a>
+</div>

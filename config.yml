@@ -1,0 +1,22 @@
+baseURL: https://robin-cartier.fr/
+theme: "robin-photography"
+MetaDataFormat: "yaml"
+params:
+  title: "Robin Cartier"
+imaging:
+  exif:
+    disableDate: false
+    disableLatLong: false
+    excludeFields: ""
+    includeFields: ""
+menu:
+  main:
+  - identifier: about
+    name: À propos
+    url: /about/
+    weight: 1
+
+  - identifier: contact
+    name: Contact
+    url: /contact/
+    weight: 0

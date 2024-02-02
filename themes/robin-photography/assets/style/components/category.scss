@@ -1,0 +1,29 @@
+@use "../base/index" as *;
+
+
+.category {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* --- desktop style --- */
+@include desktop {
+    .category {
+        margin: 0 calc(#{$desktop-category-width} / 2);
+
+        img {
+            width: 100%;
+        }
+    }
+}
+/* --- end desktop style --- */

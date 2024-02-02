@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class = "images">
+      {{ $images := .Resources.ByType "image"  }}
+      {{ range $images }}
+      <div class="image">
+        {{ with .Fit "1920x720 webp q70" }}
+          <img src="{{ .RelPermalink }}" class="focus-on-click">
+        {{ end }}
+      </div>
+      {{ end }}
+  </div>
+
+  <button id="scroll-to-top-button" style="display:none;">
+    <span class="arrow"></span>
+  </button>
+
+{{ end }}

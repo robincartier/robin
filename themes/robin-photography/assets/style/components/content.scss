@@ -1,0 +1,50 @@
+@use "../base/index" as *;
+
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#scroll-to-top-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    background-color: white;
+    padding: 1rem;
+    
+    .arrow {
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+/* --- mobile style --- */
+@include mobile {
+
+    .content {
+        padding: 0 $mobile-padding;
+    }
+}
+/* --- end mobile style --- */
+
+
+/* --- desktop style --- */
+@include desktop {
+
+    .content {
+        overflow: auto;
+        padding: 30px $desktop-padding;
+    }
+}
+/* --- end desktop style --- */
