@@ -1,0 +1,11 @@
+{{ $endpoint := $.Param "endpoint" }}
+{{ $data := dict "title" "" "content" "failed" }}
+
+{{ if and $endpoint .Site.Params.strapiApiURL }}
+
+    {{ $contentURL := printf "%s%s" .Site.Params.strapiApiURL $endpoint }}
+    {{ $data = getJSON $contentURL }}
+
+{{ end }}
+
+{{ return $data }}

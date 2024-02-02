@@ -1,7 +1,10 @@
 {{ define "main" }}
 
   {{ with .Site.GetPage "/gallery" }}
-    {{ range .Pages }}
+    {{ $strapiData := partial "strapi-content" . }}
+
+    {{ $galleries := $strapiData.data }}
+    {{ range $galleries }}
       {{ partial "category" . }}
     {{ end }}
   {{ end }}

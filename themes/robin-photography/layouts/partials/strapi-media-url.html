@@ -1,0 +1,15 @@
+{{ $url := .content.attributes.url }}
+
+{{ if .quality }}
+    {{ if (eq .quality "thumbnail") }}
+        {{ $url = .content.attributes.formats.thumbnail.url }}
+    {{ else if (eq .quality "small") }}
+        {{ $url = .content.attributes.formats.small.url }}
+    {{ else if (eq .quality "medium") }}
+        {{ $url = .content.attributes.formats.medium.url }}
+    {{ else if (eq .quality "large") }}
+        {{ $url = .content.attributes.formats.large.url }}
+    {{ end }}
+{{ end }}
+
+{{ return printf "%s%s" site.Params.strapiMediaURL $url }}

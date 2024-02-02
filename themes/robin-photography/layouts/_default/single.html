@@ -1,3 +1,6 @@
+
 {{ define "main" }}
-  {{ .Content }}
+  {{ $strapiData := partial "strapi-content" . }}
+
+  {{ $strapiData.data.attributes.content | markdownify }}
 {{ end }}

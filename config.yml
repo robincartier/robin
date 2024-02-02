@@ -3,6 +3,8 @@ theme: "robin-photography"
 MetaDataFormat: "yaml"
 params:
   title: "Robin Cartier"
+  strapiApiURL: 'http://localhost:1337/api'
+  strapiMediaURL: 'http://localhost:1337'
 imaging:
   exif:
     disableDate: false

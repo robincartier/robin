@@ -1,8 +1,14 @@
-{{ $image := .Resources.GetMatch "main" }}
 <div class = "category">
-  <a href="{{ .RelPermalink }}">
-    <img src="{{ $image.RelPermalink }}">
+
+  {{ $galleryURL := printf "%s%s" "/gallery/" .attributes.title }}
+
+  <a href="{{ $galleryURL }}">
+
+    {{ $contentURL := partial "strapi-media-url" (dict "content" .attributes.thumbnail.data "quality" "medium" )}}
+
+    <img src="{{ $contentURL }}">
+
   </a>
   <br>
-  <a href="{{ .RelPermalink }}">▸ {{ .Title }}</a>
+  <a href="{{ $galleryURL }}">▸ {{ .attributes.title }}</a>
 </div>

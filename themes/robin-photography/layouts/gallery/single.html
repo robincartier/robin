@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+    {{ $strapiData := partial "strapi-content" . }}
+
+    {{ range $strapiData.data  }}
+
+        <h1>{{ .attributes.name }}</h1>
+
+        <div class = "images">
+            {{ range .attributes.images.data }}
+                <div class="image">
+                    {{ $contentURL := partial "strapi-media-url" (dict "content" . "quality" "high" )}}
+
+                    <img src="{{ $contentURL }}" class="focus-on-click">
+                </div>
+            {{ end }}
+        </div>
+
+        <button id="scroll-to-top-button" style="display:none;">
+            <span class="arrow"></span>
+        </button>
+
+    {{ end }}
+{{ end }}
