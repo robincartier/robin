@@ -2,3 +2,5 @@ notes/
 public/
 resources/_gen/
 themes/robin/
+node_modules
+.env

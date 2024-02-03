@@ -1,7 +1,6 @@
-{{ $image := .Resources.GetMatch "main" }}
 <div class = "category">
   <a href="{{ .RelPermalink }}">
-    <img src="{{ $image.RelPermalink }}">
+    <img src="{{ .Params.thumbnail }}">
   </a>
   <br>
   <a href="{{ .RelPermalink }}">▸ {{ .Title }}</a>

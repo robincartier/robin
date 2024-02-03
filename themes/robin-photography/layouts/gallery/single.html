@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+    <div class = "images">
+        {{ $imageUrls := .Params.images }}
+
+        {{ range $imageUrls }}
+            <div class="image">
+                <img src="{{ . }}" class="focus-on-click">
+            </div>
+        {{ end }}
+    </div>
+
+    <button id="scroll-to-top-button" style="display:none;">
+    <span class="arrow"></span>
+    </button>
+
+{{ end }}
+
