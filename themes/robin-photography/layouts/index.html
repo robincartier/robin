@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+  {{ .Content }}
+
   {{ with .Site.GetPage "/gallery" }}
     {{ range .Pages }}
       {{ partial "category" . }}

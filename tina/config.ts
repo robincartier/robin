@@ -29,6 +29,26 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "home",
+        label: "Home",
+        path: "content/",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+      },
+      {
         name: "gallery",
         label: "Galleries",
         path: "content/gallery",
